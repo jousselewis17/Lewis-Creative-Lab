@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Desenvolvemos websites sob medida, sistemas web e plataformas digitais com código real, designers seniores e obsessão por resultado." />
+  <meta name="theme-color" content="#0EA1EC" />
+  <title>Lewis Creative Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Lewis Creative Lab — Início">
+        <img src="img/meulogo.png" alt="" class="logo-img" />
+        <span class="logo-dot" aria-hidden="true"></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#processo" class="nav-link">Processo</a>
+        <a href="#trabalho" class="nav-link">Trabalho</a>
+        <a href="#stack" class="nav-link">Stack</a>
+      </nav>
+      <a href="#contato" class="nav-cta" aria-label="Conversar sobre projeto">
+        <span>Conversar</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+      <nav class="mobile-links">
+        <a href="#servicos" class="mobile-link">Serviços</a>
+        <a href="#processo" class="mobile-link">Processo</a>
+        <a href="#trabalho" class="mobile-link">Trabalho</a>
+        <a href="#stack" class="mobile-link">Stack</a>
+        <a href="#contato" class="mobile-link mobile-link--cta">Conversar →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero" aria-label="Apresentação">
+      <div class="hero-inner">
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-line" aria-hidden="true"></span>
+          <span class="eyebrow-text">
+            <span class="mono">&lt;/&gt;</span> Desenvolvimento Web Sênior
+          </span>
+        </div>
+
+        <h1 class="hero-headline reveal reveal--delay1">
+          <span class="line line--serif">Software medíocre</span>
+          <span class="line line--serif line--serif-italic">não é opção.</span>
+        </h1>
+
+        <p class="hero-sub reveal reveal--delay2">
+          A gente não terceiriza pra Índia, não usa template no-code com cara de site genérico, não enrola cliente.
+          Cada projeto é desenhado do zero, escrito por desenvolvedores seniores, e entregue com a obsessão por
+          detalhe que separa software medíocre de produto memorável.
+        </p>
+
+        <div class="hero-actions reveal reveal--delay3">
+          <a href="#contato" class="btn btn--primary">
+            <span>Agendar Conversa</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#trabalho" class="btn btn--ghost">Ver trabalho</a>
+        </div>
+
+        <div class="hero-stats reveal reveal--delay4" aria-label="Estatísticas">
+          <div class="stat">
+            <span class="stat-num" data-target="100">0</span><span class="stat-unit">%</span>
+            <span class="stat-label">código do zero</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="24">0</span><span class="stat-unit">h</span>
+            <span class="stat-label">resposta garantida</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="0">0</span><span class="stat-unit">x</span>
+            <span class="stat-label">templates genéricos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="dot dot--r"></span>
+            <span class="dot dot--y"></span>
+            <span class="dot dot--g"></span>
+            <span class="code-filename">projeto.config.js</span>
+          </div>
+          <pre class="code-body"><code><span class="c-kw">const</span> <span class="c-var">projeto</span> <span class="c-op">=</span> {
+  <span class="c-key">template</span><span class="c-op">:</span> <span class="c-bool">false</span>,
+  <span class="c-key">terceirizado</span><span class="c-op">:</span> <span class="c-bool">false</span>,
+  <span class="c-key">qualidade</span><span class="c-op">:</span> <span class="c-str">'obsessiva'</span>,
+  <span class="c-key">entrega</span><span class="c-op">:</span> <span class="c-str">'garantida'</span>,
+  <span class="c-key">codigo</span><span class="c-op">:</span> <span class="c-str">'do zero'</span>,
+  <span class="c-key">cliente</span><span class="c-op">:</span> {
+    <span class="c-key">enrolado</span><span class="c-op">:</span> <span class="c-bool">false</span>,
+    <span class="c-key">satisfeito</span><span class="c-op">:</span> <span class="c-bool">true</span>,
+  },
+};
+
+<span class="c-kw">export default</span> projeto<span class="c-op">;</span>
+<span class="c-cursor">█</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MANIFESTO BAND ═══ -->
+    <div class="band-manifesto" aria-hidden="true">
+      <div class="band-track">
+        <span>Tecnologia é vantagem competitiva</span>
+        <span class="band-sep">✦</span>
+        <span>Não custo de operação</span>
+        <span class="band-sep">✦</span>
+        <span>Código real, resultado real</span>
+        <span class="band-sep">✦</span>
+        <span>Desenvolvido por seniores</span>
+        <span class="band-sep">✦</span>
+        <span>Zero templates genéricos</span>
+        <span class="band-sep">✦</span>
+        <span>Obsessão por detalhe</span>
+        <span class="band-sep">✦</span>
+        <span>Tecnologia é vantagem competitiva</span>
+        <span class="band-sep">✦</span>
+        <span>Não custo de operação</span>
+        <span class="band-sep">✦</span>
+        <span>Código real, resultado real</span>
+        <span class="band-sep">✦</span>
+        <span>Desenvolvido por seniores</span>
+        <span class="band-sep">✦</span>
+        <span>Zero templates genéricos</span>
+        <span class="band-sep">✦</span>
+        <span>Obsessão por detalhe</span>
+        <span class="band-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ═══ SERVIÇOS ═══ -->
+    <section class="section" id="servicos" aria-labelledby="servicos-title">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-label reveal">
+            <span class="mono">02 &lt;/&gt;</span> Serviços
+          </div>
+          <h2 class="section-title reveal reveal--delay1" id="servicos-title">
+            Website é arquitetura<br /><em>e design.</em>
+          </h2>
+          <p class="section-intro reveal reveal--delay2">
+            Cada linha tem peso. Cada componente tem propósito. O que fazemos de melhor:
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal" aria-label="Website sob medida">
+            <div class="card-num" aria-hidden="true">01</div>
+            <div class="card-body">
+              <h3 class="card-title">Website sob medida</h3>
+              <p class="card-desc">Sistemas web complexos, painéis administrativos, marketplaces, plataformas SaaS. Frontend que não trava, backend que aguenta porrada.</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </article>
+
+          <article class="service-card reveal" aria-label="Responsividade">
+            <div class="card-num" aria-hidden="true">02</div>
+            <div class="card-body">
+              <h3 class="card-title">Responsividade</h3>
+              <p class="card-desc">Desenvolvemos websites que se ajustam automaticamente a smartphones, tablets, laptops e computadores, proporcionando uma experiência consistente em qualquer ecrã.</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </article>
+
+          <article class="service-card reveal" aria-label="Design UX e UI">
+            <div class="card-num" aria-hidden="true">03</div>
+            <div class="card-body">
+              <h3 class="card-title">Design UX &amp; UI</h3>
+              <p class="card-desc">Combinamos estratégia, UX e UI para criar websites modernos, intuitivos e orientados para resultados. Cada decisão de design gera confiança e impulsiona o crescimento.</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </article>
+
+          <article class="service-card service-card--featured reveal" aria-label="Equipa comprometida">
+            <div class="card-num" aria-hidden="true">04</div>
+            <div class="card-body">
+              <h3 class="card-title">Uma equipa comprometida com os seus resultados</h3>
+              <p class="card-desc">Um website deve ser mais do que presença online. Combinamos design, performance e experiência do utilizador para criar plataformas que inspiram confiança e convertem visitantes em clientes.</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROCESSO ═══ -->
+    <section class="section section--dark" id="processo" aria-labelledby="processo-title">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-label reveal">
+            <span class="mono">03 &lt;/&gt;</span> Processo
+          </div>
+          <h2 class="section-title reveal reveal--delay1" id="processo-title">
+            Da ideia ao lançamento:<br /><em>claro e eficiente.</em>
+          </h2>
+          <p class="section-intro reveal reveal--delay2">
+            Conheça as etapas que seguimos para transformar a sua visão num website profissional.
+          </p>
+        </div>
+
+        <div class="process-list" role="list">
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">01</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Descoberta</h3>
+                <span class="process-time">~1 a 2 dias</span>
+              </div>
+              <p class="process-desc">Conversamos para compreender o seu negócio, objetivos e público-alvo. Definimos requisitos, funcionalidades e o plano do projeto.</p>
+            </div>
+            <div class="process-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">02</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Planeamento</h3>
+                <span class="process-time">~1 a 3 dias</span>
+              </div>
+              <p class="process-desc">Estruturamos a arquitetura do website, organizamos o conteúdo e definimos a melhor experiência para os seus visitantes.</p>
+            </div>
+            <div class="process-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">03</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Design UX/UI</h3>
+                <span class="process-time">~3 a 5 dias</span>
+              </div>
+              <p class="process-desc">Criamos layouts modernos, intuitivos e alinhados à identidade da sua marca, sempre com foco na experiência do utilizador e na conversão.</p>
+            </div>
+            <div class="process-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">04</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Desenvolvimento</h3>
+                <span class="process-time">~5 a 10 dias</span>
+              </div>
+              <p class="process-desc">Transformamos o design num website rápido, responsivo e otimizado para todos os dispositivos.</p>
+            </div>
+            <div class="process-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">05</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Testes e Otimização</h3>
+                <span class="process-time">~1 a 2 dias</span>
+              </div>
+              <p class="process-desc">Verificamos desempenho, segurança, compatibilidade e corrigimos todos os detalhes antes da publicação.</p>
+            </div>
+            <div class="process-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="process-item reveal" role="listitem">
+            <div class="process-num" aria-hidden="true">06</div>
+            <div class="process-body">
+              <div class="process-meta">
+                <h3 class="process-name">Lançamento</h3>
+                <span class="process-time">~1 dia</span>
+              </div>
+              <p class="process-desc">Publicamos o website e garantimos que tudo esteja a funcionar corretamente para que a sua empresa esteja pronta para crescer online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRABALHO ═══ -->
+    <section class="section" id="trabalho" aria-labelledby="trabalho-title">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-label reveal">
+            <span class="mono">04 &lt;/&gt;</span> Trabalho Selecionado
+          </div>
+          <h2 class="section-title reveal reveal--delay1" id="trabalho-title">
+            O que construímos.
+          </h2>
+          <p class="section-intro reveal reveal--delay2">
+            Websites modernos, rápidos e orientados para resultados, adaptados às necessidades de cada negócio.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Website Institucional">
+            <div class="work-tag">Institucional</div>
+            <h3 class="work-title">Website Institucional</h3>
+            <p class="work-desc">Apresente a sua empresa com profissionalismo, fortaleça a sua marca e conquiste a confiança dos seus clientes.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Loja Online">
+            <div class="work-tag">E-commerce</div>
+            <h3 class="work-title">Loja Online</h3>
+            <p class="work-desc">Venda produtos na internet com uma plataforma segura, intuitiva e preparada para crescer com o seu negócio.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Landing Pages">
+            <div class="work-tag">Marketing</div>
+            <h3 class="work-title">Landing Pages</h3>
+            <p class="work-desc">Páginas focadas em conversão para campanhas de marketing, lançamento de produtos e captação de leads.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Portfólios Profissionais">
+            <div class="work-tag">Portfólio</div>
+            <h3 class="work-title">Portfólios Profissionais</h3>
+            <p class="work-desc">Mostre os seus projetos, competências e experiência através de uma presença digital moderna e impactante.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Blogs e Portais">
+            <div class="work-tag">Conteúdo</div>
+            <h3 class="work-title">Blogs e Portais</h3>
+            <p class="work-desc">Publique conteúdos, fortaleça a sua autoridade no mercado e aumente a sua visibilidade online.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Restaurantes">
+            <div class="work-tag">Restauração</div>
+            <h3 class="work-title">Websites para Restaurantes</h3>
+            <p class="work-desc">Menus digitais, reservas, localização e tudo o que o seu restaurante precisa para atrair mais clientes.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Clínicas e Consultórios">
+            <div class="work-tag">Saúde</div>
+            <h3 class="work-title">Clínicas e Consultórios</h3>
+            <p class="work-desc">Agendamentos, apresentação de serviços e uma experiência simples para os seus pacientes.</p>
+          </div>
+          <div class="work-card reveal" tabindex="0" role="article" aria-label="Escolas e Instituições">
+            <div class="work-tag">Educação</div>
+            <h3 class="work-title">Escolas e Instituições</h3>
+            <p class="work-desc">Divulgação de cursos, matrículas, notícias e comunicação eficiente com alunos e encarregados.</p>
+          </div>
+          <div class="work-card work-card--wide reveal" tabindex="0" role="article" aria-label="Sistemas e Plataformas Web">
+            <div class="work-tag">Plataformas</div>
+            <h3 class="work-title">Sistemas e Plataformas Web</h3>
+            <p class="work-desc">Desenvolvemos soluções personalizadas para empresas que necessitam de funcionalidades específicas e processos digitais mais eficientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STACK ═══ -->
+    <section class="section section--tinted" id="stack" aria-labelledby="stack-title">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="section-label reveal">
+            <span class="mono">05 &lt;/&gt;</span> Ferramentas
+          </div>
+          <h2 class="section-title reveal reveal--delay1" id="stack-title">
+            Nossa Stack <em>Tecnológica.</em>
+          </h2>
+          <p class="section-intro reveal reveal--delay2">
+            Tecnologias modernas e reconhecidas no mercado para websites rápidos, seguros e escaláveis.
+          </p>
+        </div>
+
+        <div class="stack-grid" role="list">
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7 5h26l-2.5 28L20 36l-10.5-3L7 5z" fill="#0EA1EC" opacity="0.15"/>
+                <path d="M20 32.5l8.5-2.35L30.5 9H20v23.5z" fill="#0EA1EC" opacity="0.4"/>
+                <path d="M20 9H9.5l.7 6.5H20V9zm0 9.5h-9l.35 4.5H20v-4.5z" fill="#0EA1EC"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">HTML5</span>
+              <span class="stack-desc">Base estrutural de todos os websites modernos.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 5h26l-2.5 28L20 36l-10.5-3L7 5z" fill="#0EA1EC" opacity="0.15"/>
+                <path d="M20 32.5l8.5-2.35L30.5 9H20v23.5z" fill="#0EA1EC" opacity="0.4"/>
+                <path d="M20 9H9.5l.7 6.5H20V9zm1 9.5v4.5l6.5-1.5-.7-3H21z" fill="#0EA1EC"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">CSS3</span>
+              <span class="stack-desc">Design, responsividade e experiência visual.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="6" width="28" height="28" rx="3" fill="#0EA1EC" opacity="0.15"/>
+                <path d="M14 14v12l6-5 6 5V14" stroke="#0EA1EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">JavaScript</span>
+              <span class="stack-desc">Interatividade, dinamismo e intuição.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="7" stroke="#0EA1EC" stroke-width="2"/>
+                <ellipse cx="20" cy="20" rx="15" ry="7" stroke="#0EA1EC" stroke-width="2" opacity="0.5"/>
+                <ellipse cx="20" cy="20" rx="15" ry="7" stroke="#0EA1EC" stroke-width="2" opacity="0.5" transform="rotate(60 20 20)"/>
+                <ellipse cx="20" cy="20" rx="15" ry="7" stroke="#0EA1EC" stroke-width="2" opacity="0.5" transform="rotate(120 20 20)"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">React</span>
+              <span class="stack-desc">Interfaces modernas, rápidas e de alto desempenho.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 8c6.627 0 12 5.373 12 12s-5.373 12-12 12S8 26.627 8 20 13.373 8 20 8z" fill="#0EA1EC" opacity="0.15"/>
+                <path d="M20 14v12M14 20h12" stroke="#0EA1EC" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="3" fill="#0EA1EC"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">Node.js</span>
+              <span class="stack-desc">Aplicações robustas e escaláveis no backend.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 12l10-5 10 5v16l-10 5-10-5V12z" fill="#0EA1EC" opacity="0.15" stroke="#0EA1EC" stroke-width="1.5"/>
+                <path d="M20 7v26M10 12l10 5 10-5" stroke="#0EA1EC" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">PHP</span>
+              <span class="stack-desc">Solução confiável para websites, sistemas e integrações.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="20" cy="14" rx="12" ry="5" fill="#0EA1EC" opacity="0.2" stroke="#0EA1EC" stroke-width="1.5"/>
+                <path d="M8 14v6c0 2.76 5.37 5 12 5s12-2.24 12-5v-6" stroke="#0EA1EC" stroke-width="1.5"/>
+                <path d="M8 20v6c0 2.76 5.37 5 12 5s12-2.24 12-5v-6" stroke="#0EA1EC" stroke-width="1.5" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">MySQL</span>
+              <span class="stack-desc">Base de dados segura e eficiente para informações.</span>
+            </div>
+          </div>
+
+          <div class="stack-item reveal" role="listitem">
+            <div class="stack-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 28s-4-8 0-16c0 0 2 4 8 4s8-4 8-4c4 8 0 16 0 16" fill="#0EA1EC" opacity="0.15" stroke="#0EA1EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="20" cy="18" r="3" fill="#0EA1EC"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <span class="stack-name">Git &amp; GitHub</span>
+              <span class="stack-desc">Controlo de versões e gestão profissional do código.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="stack-note reveal">
+          Escolhemos as tecnologias mais adequadas para cada projeto, garantindo desempenho, segurança e uma excelente experiência para os utilizadores.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="section section--cta" id="contato" aria-labelledby="cta-title">
+      <div class="cta-inner">
+        <div class="cta-content reveal">
+          <div class="section-label">
+            <span class="mono">06 &lt;/&gt;</span> Contato
+          </div>
+          <h2 class="cta-headline" id="cta-title">
+            Vamos construir algo <em>sério?</em>
+          </h2>
+          <p class="cta-sub">
+            Conta o problema. A gente responde em até 24 horas com uma proposta que faz sentido ou avisa honestamente que não somos o time pra isso.
+          </p>
+          <a href="https://wa.me/" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
+        <div class="cta-visual reveal reveal--delay2" aria-hidden="true">
+          <div class="cta-badge">
+            <span class="badge-main">24h</span>
+            <span class="badge-sub">Resposta garantida</span>
+          </div>
+          <div class="cta-pillars">
+            <div class="pillar">
+              <span class="pillar-icon">✦</span>
+              <span>Código do zero</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">✦</span>
+              <span>Devs seniores</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">✦</span>
+              <span>Sem templates</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">✦</span>
+              <span>Transparência total</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="img/meulogo.png" alt="" class="logo-img logo-img--footer" />
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <a href="#servicos" class="footer-link">Serviços</a>
+        <a href="#processo" class="footer-link">Processo</a>
+        <a href="#trabalho" class="footer-link">Trabalho</a>
+        <a href="#stack" class="footer-link">Stack</a>
+        <a href="#contato" class="footer-link">Contato</a>
+      </nav>
+      <div class="footer-copy">
+        <span>© 2026 Lewis Creaative Lab.</span>
+        <span>Desenvolvido com obsessão por detalhe.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
